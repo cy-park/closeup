@@ -1,0 +1,203 @@
+/**
+ *
+ * Hosted by Project
+ * include: font files from $font_root
+ *
+ */
+$font_root: "assets/fonts/";
+
+/**
+ *
+ * NHG DSPro W04 Straight R 400, 600 & 700
+ * Local fonts
+ *
+ */
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-55Rg.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-55Rg.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-55Rg.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-55Rg.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-56It.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-56It.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-56It.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-56It.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+	}
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-65Md.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-65Md.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-65Md.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-65Md.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-66MdIt.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-66MdIt.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-66MdIt.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-66MdIt.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+	}
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-75Bd.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-75Bd.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-75Bd.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-75Bd.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGD";
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-76BdIt.eot");
+	src: url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-76BdIt.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-76BdIt.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-DSPro-R/NHaasGroteskDSPro-76BdIt.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
+	}
+
+@mixin NHGD($weight: 700, $style: normal) {
+	font-family: "NHGD";
+	font-weight: $weight;
+	font-style: $style;
+}
+
+/**
+ *
+ * NHG Text W04 400, 600 & 700
+ * Local fonts
+ *
+ */
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-55Rm.eot");
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-55Rm.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-55Rm.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-55Rm.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-56It.eot");
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-56It.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-56It.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-56It.woff") format("woff");
+	font-weight: 400;
+	font-style: italic;
+	}
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-65Md.eot");
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-65Md.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-65Md.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-65Md.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-66MdIt.eot");
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-66MdIt.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-66MdIt.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-66MdIt.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+	}
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-75Bd.eot");
+	src: url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-75Bd.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-75Bd.woff2") format("woff2"),
+		 url("#{$font_root}/NHG-TXW04/NeueHaasGroteskTextW04-75Bd.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "NHGT";
+	src: url("#{$font_root}/Grosvenor/NeueHaasGroteskTextW04-76BdIt.eot");
+	src: url("#{$font_root}/Grosvenor/NeueHaasGroteskTextW04-76BdIt.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/Grosvenor/NeueHaasGroteskTextW04-76BdIt.woff2") format("woff2"),
+		 url("#{$font_root}/Grosvenor/NeueHaasGroteskTextW04-76BdIt.woff") format("woff");
+	font-weight: 700;
+	font-style: italic;
+	}
+
+@mixin NHGT($weight: 400, $style: normal) {
+	font-family: "NHGT";
+	font-weight: $weight;
+	font-style: $style;
+}
+
+/**
+ *
+ * Grosvenor 300, 500 & 700
+ * Local fonts
+ *
+ */
+@font-face {
+	font-family: "GRV";
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Light.eot");
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Light.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Light.woff2") format("woff2"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "GRV";
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Medium.eot");
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Medium.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Medium.woff2") format("woff2"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	}
+@font-face {
+	font-family: "GRV";
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Bold.eot");
+	src: url("#{$font_root}/Grosvenor/GrosvenorWeb-Bold.eot?#iefix") format("embedded-opentype"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Bold.woff2") format("woff2"),
+		 url("#{$font_root}/Grosvenor/GrosvenorWeb-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	}
+
+@mixin GRV($weight: 700, $style: normal) {
+	font-family: "GRV";
+	font-weight: $weight;
+	font-style: $style;
+}
+
+/**
+ *
+ * Verlag 400 & 700
+ * include: <link rel="stylesheet" href="http://www.nationalgeographic.com/etc/designs/platform/v3/styles/main.css">
+ *
+ */
+@mixin VLG ($weight: 400) {
+	font-family: "HCo Verlag";
+	font-weight: $weight;
+}
+
+/**
+ *
+ * Neue Haas Grotesk W04 400 & 600
+ * include: <link rel="stylesheet" href="http://www.nationalgeographic.com/etc/designs/platform/v3/styles/main.css">
+ *
+ */
+@mixin Haas ($weight: 400) {
+	font-family: "Haas";
+	font-weight: $weight;
+}

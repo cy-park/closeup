@@ -1,0 +1,355 @@
+@import "var";
+@import "libs/normalize";
+@import "libs/lib";
+
+#hack {
+
+	*, *:before, *:after {
+		box-sizing: border-box;
+		text-rendering: optimizeLegibility;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	font-family: "Georgia",sans-serif;
+	font-size: 16px;
+
+	img {vertical-align:middle;}
+	input:focus {outline:none;}
+	ol, ul, li {list-style:none;}
+
+	::selection {text-shadow:none;color:$co_wht;background:$co_txt;}
+
+	a {
+		@include ease;
+		display: block;
+		text-decoration: none;
+		cursor: pointer;
+		color: $co_wht;
+		&:hover {color: $co_emp;}
+	}
+
+	position: relative;
+
+	.bg-pn {
+		width: 1260px;
+		margin: 0 auto;
+		position: relative;
+
+		.bg-home {
+			width: 100%;
+			opacity: 0;
+			pointer-events: none;
+
+			.bg {
+				display: block;
+				border: 0;
+				width: 100%;
+			}
+
+		}
+
+		.bg-article {
+			width: 100%;
+			opacity: 0;
+			pointer-events: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			.bg {
+				display: block;
+				border: 0;
+				width: 100%;
+			}
+		}
+
+
+
+		.loggedout {
+			width: 100%;
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	.prg-pn {
+
+		font-family: "HCo Verlag", sans-serif;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		transform: translateY(100%);
+		transition: transform .2s linear;
+		transition-delay: .2s;
+
+		&.on {
+			transform: translateY(0%);
+		}
+
+		.wrp {
+			@include shadow;
+			width: 1260px;
+			padding: 30px 130px 30px 70px;
+			margin: 0 auto;
+			position: relative;
+			background: #fff;
+
+			.title {
+				text-transform: uppercase;
+				font-size: 16px;
+				font-weight: 700;
+				margin-bottom: 12px;
+				letter-spacing: .1em;
+			}
+
+			.prg {
+				width: 100%;
+				height: 8px;
+				position: relative;
+				background: #ccc;
+				.after {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 8px;
+					transition: width .1s linear;
+				}
+
+				&.now {
+					margin-bottom: 40px;
+					.after {
+						width: 0;
+						background: #fc0;
+					}
+				}
+
+				&.all {
+					.after {
+						transition: width .8s linear;
+						width: 35%;
+						background: #888;
+					}
+				}
+			}
+
+			.numbers {
+				ul {
+					@include cf;
+					margin: 0;
+					padding: 0;
+
+					li {
+						float: left;
+						padding: 14px 20px;
+
+						h1 {
+							text-align: center;
+							margin: 0;
+							font-size: 30px;
+							font-family: "Haas", sans-serif;
+						}
+
+						svg {
+							width: 26px;
+							height: 30px;
+							margin: 0 auto 4px auto;
+							display: block;
+						}
+
+						span {
+							text-transform: uppercase;
+							font-size: 12px;
+							font-weight: 700;
+							letter-spacing: .1em;
+						}
+					}
+				}
+			}
+
+			.close {
+				cursor: pointer;
+				svg {
+					width: 20px;
+					height: 20px;
+					display: block;
+					position: absolute;
+					top: 20px;
+					right: 20px;
+				}
+			}
+
+			.congrats {
+				display: none;
+				text-align: center;
+				text-transform: uppercase;
+
+				h1 {
+					margin: 0;
+					margin-bottom: 4px;
+					font-size: 34px;
+					color: #111;
+					letter-spacing: .1em;
+				}
+
+				h3 {
+					margin: 0;
+					margin-bottom: 30px;
+					font-size: 14px;
+					color: #333;
+					letter-spacing: .1em;
+				}
+			}
+		}
+
+		&.done {
+			.wrp {
+				.title, .prg.now, .title {
+					display: none;
+				}
+
+				.congrats {
+					display: block;
+				}
+
+				.prg.all {
+					.after {
+						width: 100% !important;
+						background: #fc0;
+					}
+				}
+			}
+		}
+	}
+
+
+	.prg-min {
+		transition: opacity .3s ease-out;
+		opacity: 0;
+		pointer-events: none;
+		display: block;
+		position: fixed;
+		bottom: 40px;
+		right: 40px;
+		// width: 40px;
+		// height: 40px;
+	}
+
+	.signin-pn {
+		width: 100%;
+		height: 100vh;
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: none;
+		img {
+			display: block;
+			border: 0;
+			width: 380px;
+		}
+
+		&.on {@include fpos;}
+	}
+
+	.overlay {
+		transition: opacity .3s ease-out;
+		opacity: 0;
+		pointer-events: none;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.75);
+		@include fpos;
+
+		.lightbox {
+			width: 700px;
+			position: relative;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+
+			.close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 60px;
+				height: 60px;
+				cursor: pointer;
+			}
+		}
+
+		.signin {
+			display: none;
+		}
+	}
+
+	.on {
+		opacity: 1 !important;
+		pointer-events: auto !important;
+	}
+
+	&.home {
+		.bg-pn {
+			.loggedout {
+				top: 80px;
+			}
+		}
+	}
+
+	&.article {
+		.bg-pn {
+			.loggedout {
+				top: 0;
+			}
+		}
+	}
+
+
+	//@import "templates/app";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

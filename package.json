@@ -1,0 +1,46 @@
+{
+  "name": "",
+  "version": "0.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "serve": "browser-sync start --server 'build' --files 'build/*' --host 'isp.dev.nationalgeographic.com' --port 8080 --open 'external' --extensions 'html'",
+    "watch": "npm run mkdir && npm-run-all --parallel watch:*",
+    "watch:js": "watchify -v -t babelify -t hbsfy src/js/main.js -o build/bundle.js -d",
+    "watch:css": "node-sass src/scss/ -o build --source-map true -w",
+    "watch:static": "onchange 'src/static/*' -- npm run build:static",
+    "build": "npm run rmdir && npm run mkdir && npm-run-all --serial build:*",
+    "build:js": "browserify -v -t babelify -t hbsfy -g uglifyify src/js/main.js -o build/bundle.js",
+    "build:css": "npm run scss && npm run postcss",
+    "build:static": "cp -r src/static/* build/",
+    "scss": "node-sass src/scss/ -o build --output-style compressed -x",
+    "postcss": "postcss -u autoprefixer -r build/style.css",
+    "rmdir": "rm -r build",
+    "mkdir": "mkdir -p build",
+    "mock:on": "cp src/static/m.html src/static/index.html",
+    "mock:off": "cp src/static/c.html src/static/index.html",
+    "inst": "npm install handlebars --save && npm install autoprefixer babel-preset-es2015 babelify browser-sync browserify hbsfy node-sass npm-run-all onchange postcss-cli uglifyify watchify --save-dev"
+  },
+  "author": "cy",
+  "private": "true",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.8",
+    "browserify": "^14.3.0",
+    "hbsfy": "^2.7.0",
+    "node-sass": "^4.5.2",
+    "npm-run-all": "^4.0.2",
+    "onchange": "^3.2.1",
+    "postcss-cli": "^3.2.0",
+    "uglifyify": "^3.0.4",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.8",
+    "jquery": "^3.2.1",
+    "lazycat": "^0.2.1",
+    "scrawler": "^1.2.1"
+  }
+}

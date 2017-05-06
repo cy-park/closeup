@@ -1,0 +1,23 @@
+#Prevent viewing of .htaccess file
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+#Prevent directory listings
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ http://%1/$1 [R=301,NC,L]
+
+# DOMAIN SPECIFIC REDIRECT TO WWW
+# RewriteCond %{HTTP_HOST} ^designbycy\.com$ [NC]
+# RewriteRule ^(.*)$ http://www.designbycy.com/$1 [R=301,NC,L]
+
+# DOMAIN SPECIFIC REDIRECT TO NON-WWW
+# RewriteCond %{HTTP_HOST} ^www\.designbycy\.com [NC]
+# RewriteRule ^(.*)$ http://designbycy.com/$1 [R=301,NC,L]
+

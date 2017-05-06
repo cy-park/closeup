@@ -1,0 +1,79 @@
+@mixin hidden {display: none !important; visibility: hidden;} .hidden { @include hidden; }
+
+@mixin cf {
+	&:before, &:after {
+		content: " ";
+		display: table;
+	} &:after {clear: both;}
+} .cf { @include cf; }
+
+@mixin fpos($horizontal: center, $vertical: center) {
+	display: flex;
+	justify-content: $horizontal;
+	align-items: $vertical;
+}
+
+@mixin ease($sec: .25s, $effect: ease-out) {
+	transition: all $sec $effect;
+}
+
+@function strip-unit($num) {
+	@return $num / ($num * 0 + 1);
+}
+
+@mixin col($span: 12, $float: none, $left: 0, $right: 0, $min_width: -1, $max_width: -1) {
+
+	width: percentage($span / 12);
+	float: $float;
+	margin-left: percentage($left / 12);
+	margin-right: percentage($right / 12);
+
+	@if $min_width > 0 {
+		@include rem(min-width, $min_width);
+	}
+
+	@if $max_width > 0 {
+		@include rem(max-width, $max_width);
+	}
+}
+
+@mixin blink {
+	// animation: name duration timing delay iteration-count direction(reverse/alternate)
+	animation: blinker 2s linear 0s infinite;
+	@keyframes blinker {
+	    0% { opacity: 1.0; }
+	    50% { opacity: 0.25; }
+	    100% { opacity: 1.0; }
+	}
+} .blink { @include blink; }
+
+@mixin underline($weight: 2, $padding: 6) {
+
+	position: relative;
+	padding-bottom: #{$padding}px;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: #{$weight}px;
+		background: $co_emp;
+		opacity: 0;
+		transition: opacity .25s ease-out;
+	}
+
+	&:hover {
+		color: $co_emp;
+		&:after {opacity: 1;}
+	}
+}
+
+@mixin shadow {
+	box-shadow: 0px 3px 8px 2px rgba(0,0,0,.25);
+}
+
+@mixin gacc {
+    transform: translateZ(0);
+}
